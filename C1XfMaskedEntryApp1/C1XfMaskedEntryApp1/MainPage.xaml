@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:c1="clr-namespace:C1.Xamarin.Forms.Input;assembly=C1.Xamarin.Forms.Input"
+             xmlns:local="clr-namespace:C1XfMaskedEntryApp1"
+             x:Class="C1XfMaskedEntryApp1.MainPage"
+             Padding="20">
+
+    <StackLayout>
+        <Label Text="マイナンバー（個人）" 
+               HorizontalOptions="StartAndExpand"/>
+        <c1:C1MaskedEntry x:Name="C1MaskedEntry1" Mask="0000-0000-0000" 
+                          Keyboard="Numeric" TextChanged="C1MaskedEntry1_TextChanged"
+                          HorizontalOptions="FillAndExpand">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup Name="ValidationStates">
+                    <VisualState Name="Finished">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="LightGreen"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState Name="InProgress">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="LightPink"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </c1:C1MaskedEntry>
+        <Label Text="生年月日" 
+               HorizontalOptions="StartAndExpand"/>
+        <c1:C1MaskedEntry x:Name="C1MaskedEntry2" Mask="0000/00/00" 
+                          Keyboard="Numeric" TextChanged="C1MaskedEntry2_TextChanged" 
+                          HorizontalOptions="FillAndExpand">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup Name="ValidationStates">
+                    <VisualState Name="Finished">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="LightGreen"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState Name="InProgress">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="LightPink"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </c1:C1MaskedEntry>
+    </StackLayout>
+
+</ContentPage>
